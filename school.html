@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School — Dalton Goodwin-Peck</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--light);
+    }
+
+    /* ── SKILL DOMAINS ── */
+    .domains-section {
+      padding: 4.5rem 0;
+    }
+
+    .domain-block {
+      border-bottom: 1px solid var(--light);
+      padding: 3.5rem 0;
+    }
+    .domain-block:first-child { padding-top: 0; }
+    .domain-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .domain-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* LEFT: label + title */
+    .domain-label-col .domain-num {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .domain-label-col h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .domain-label-col h2 em { font-style: italic; color: var(--ink2); }
+
+    .domain-label-col .domain-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* RIGHT: skill items */
+    .skill-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .skill-item {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--light);
+      transition: background 0.2s;
+    }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-item:hover { background: var(--off-white); }
+
+    .skill-item-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-item-desc {
+      font-size: 0.825rem;
+      font-weight: 300;
+      color: var(--ink2);
+      line-height: 1.65;
+    }
+
+    /* TAG STRIP on each domain */
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .domain-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .page-header { padding: 3.5rem 0 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dalton Goodwin-Peck</a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">About</a></li>
+    <li><a href="school.html" class="active">School</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow anim d1">NSCC · IT Systems Management &amp; Security</p>
+      <h1 class="display anim d2">Technical<br><em>skills &amp; domains</em></h1>
+      <p class="lead anim d3" style="margin-top: 1.25rem;">
+        Hands-on work across enterprise identity, network security, cloud management, Linux administration, and virtualization.
+      </p>
+    </div>
+  </section>
+
+  <section class="domains-section">
+    <div class="container">
+
+      <!-- 1. IDENTITY & ACCESS MANAGEMENT -->
+      <div class="domain-block anim d2">
+        <div class="domain-grid">
+          <div class="domain-label-col">
+            <div class="domain-num">Domain 01</div>
+            <h2>Identity &amp; Access<br><em>Management</em></h2>
+            <p class="domain-sub">Active Directory</p>
+            <div class="domain-tags">
+              <span class="tag">AD DS</span>
+              <span class="tag">GPO</span>
+              <span class="tag">Least Privilege</span>
+              <span class="tag">OU Design</span>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-title">Domain Infrastructure</div>
+              <div class="skill-item-desc">Deployment and management of Active Directory Domain Services (AD DS), including Domain Controller redundancy (DC01/DC02) for high availability.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Governance &amp; Policy</div>
+              <div class="skill-item-desc">Designing and implementing Group Policy Objects (GPOs) to enforce security baselines, automate software deployment, and standardize desktop environments.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Object Lifecycle Management</div>
+              <div class="skill-item-desc">Managing users, security groups, and organizational units (OUs) following the principle of Least Privilege.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">System Integration</div>
+              <div class="skill-item-desc">Hardening the process of joining Windows and Linux workstations to a secure domain.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. NETWORK SECURITY -->
+      <div class="domain-block anim d2">
+        <div class="domain-grid">
+          <div class="domain-label-col">
+            <div class="domain-num">Domain 02</div>
+            <h2>Network Security &amp;<br><em>Perimeter Defense</em></h2>
+            <p class="domain-sub">OPNsense</p>
+            <div class="domain-tags">
+              <span class="tag">Firewall</span>
+              <span class="tag">VLANs</span>
+              <span class="tag">WireGuard</span>
+              <span class="tag">OpenVPN</span>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-title">Firewall Architecture</div>
+              <div class="skill-item-desc">Configuring stateful packet inspection, NAT rules, and port forwarding to manage traffic flow.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Traffic Segmentation</div>
+              <div class="skill-item-desc">Using VLANs to isolate sensitive server traffic from general user networks, reducing the internal attack surface.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Secure Connectivity</div>
+              <div class="skill-item-desc">Implementing VPN solutions (WireGuard / OpenVPN) to provide encrypted, authenticated remote access to internal resources.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. M365 & INTUNE -->
+      <div class="domain-block anim d2">
+        <div class="domain-grid">
+          <div class="domain-label-col">
+            <div class="domain-num">Domain 03</div>
+            <h2>Modern Endpoint<br><em>Management</em></h2>
+            <p class="domain-sub">M365 &amp; Intune</p>
+            <div class="domain-tags">
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Intune MDM</span>
+              <span class="tag">MFA</span>
+              <span class="tag">Conditional Access</span>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-title">Cloud Administration</div>
+              <div class="skill-item-desc">Managing Microsoft 365 tenants, including Exchange Online, SharePoint permissions, and Shared Mailboxes.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Mobile Device Management</div>
+              <div class="skill-item-desc">Utilizing Microsoft Intune for over-the-air device enrollment, configuration profiles, and compliance monitoring.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Identity Security</div>
+              <div class="skill-item-desc">Implementing Conditional Access policies and Multi-Factor Authentication (MFA) to protect cloud assets.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. LINUX -->
+      <div class="domain-block anim d2">
+        <div class="domain-grid">
+          <div class="domain-label-col">
+            <div class="domain-num">Domain 04</div>
+            <h2>Linux Systems<br><em>Administration</em></h2>
+            <p class="domain-sub">CLI &amp; Service Hardening</p>
+            <div class="domain-tags">
+              <span class="tag">CLI</span>
+              <span class="tag">SSH</span>
+              <span class="tag">Sudoers</span>
+              <span class="tag">Permissions</span>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-title">CLI Proficiency</div>
+              <div class="skill-item-desc">Advanced navigation and management of headless server environments via the Command Line Interface.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Service Hardening</div>
+              <div class="skill-item-desc">Installing and configuring core services (SSH, web servers, repositories) with a focus on file permissions and secure configurations.</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">User &amp; Group Security</div>
+              <div class="skill-item-desc">Managing Linux-level permissions and sudoers to maintain a secure multi-user environment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. VIRTUALIZATION -->
+      <div class="domain-block anim d2">
+        <div class="domain-grid">
+          <div class="domain-label-col">
+            <div class="domain-num">Domain 05</div>
+            <h2>Virtualization &amp;<br><em>Infrastructure</em></h2>
+            <p class="domain-sub">VMware</p>
+            <div class="domain-tags">
+              <span class="tag">VMware</span>
+              <span class="tag">ESXi</span>
+              <span class="tag">Snapshots</span>
+              <span class="tag">Disaster Recovery</span>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-title">Hypervisor Operations</div>
+              <div class="skill-item-desc">Managing virtual machines within VMware Workstation Pro and ESXi, including resource allocation (CPU / RAM / Storage).</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-title">Snapshot &amp; Disaster Recovery</div>
+              <div class="skill-item-desc">Utilizing snapshots and clones to create point-in-time recovery paths before major system updates or configuration changes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2025 Dalton Goodwin-Peck</span>
+  <a href="contact.html"><span class="__cf_email__" data-cfemail="1773767b63787957637f727478656578737e797060727539786570">[email&#160;protected]</span></a>
+</footer>
+
+<script data-cfasync="false

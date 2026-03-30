@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Dalton Goodwin-Peck</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page {
+      min-height: calc(100vh - 60px - 60px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--light);
+    }
+
+    /* LEFT */
+    .contact-left {
+      padding: 6rem 4rem 5rem 3rem;
+      border-right: 1px solid var(--light);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-left .display { margin: 1rem 0 1.5rem; }
+
+    .contact-left .lead {
+      max-width: 380px;
+      margin-bottom: 3rem;
+    }
+
+    /* EMAIL BLOCK */
+    .email-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .email-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .email-address {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .email-address:hover { color: var(--ink2); }
+
+    .email-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* RIGHT */
+    .contact-right {
+      padding: 6rem 3rem 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* DETAIL LIST */
+    .detail-list {
+      border: 1px solid var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--light);
+      transition: background 0.2s;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row:hover { background: var(--off-white); }
+
+    .detail-key {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .detail-val {
+      font-size: 0.875rem;
+      color: var(--ink2);
+      font-weight: 300;
+    }
+
+    .detail-val.status-open {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #3d9e5c;
+      flex-shrink: 0;
+    }
+
+    /* COPY FEEDBACK */
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 0.7rem 1.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink2);
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { border-color: var(--mid); color: var(--ink); }
+    .copy-btn.success { border-color: var(--ink); color: var(--ink); background: var(--ink); color: var(--white); }
+
+    @media (max-width: 768px) {
+      .contact-page { grid-template-columns: 1fr; }
+      .contact-left { padding: 3.5rem 1.5rem 2.5rem; border-right: none; border-bottom: 1px solid var(--light); }
+      .contact-right { padding: 2.5rem 1.5rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dalton Goodwin-Peck</a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">About</a></li>
+    <li><a href="school.html">School</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="contact-page">
+
+    <!-- LEFT -->
+    <div class="contact-left">
+      <div>
+        <p class="eyebrow anim d1">Contact</p>
+        <h1 class="display anim d2">Let's<br><em>talk</em></h1>
+        <p class="lead anim d3">
+          Whether you have a question, an opportunity, or just want to connect my inbox is open.
+        </p>
+
+        <div class="email-block anim d3">
+          <div class="email-label">Email</div>
+          <a href="mailto:dalton@thecorrodingweb.org" class="email-address">
+            dalton@thecorrodingweb.org
+          </a>
+          <div class="email-actions">
+            <a href="mailto:dalton@thecorrodingweb.org" class="btn btn-dark">Send Email</a>
+            <button class="copy-btn" id="copyBtn" onclick="copyEmail()">Copy Address</button>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.8rem; color: var(--muted); font-weight: 300;">
+        I typically respond within a day or two.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="contact-right">
+      <p class="eyebrow anim d3" style="margin-bottom: 1.25rem;">Details</p>
+
+      <div class="detail-list anim d4">
+        <div class="detail-row">
+          <span class="detail-key">Name</span>
+          <span class="detail-val">Dalton Goodwin-Peck</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Role</span>
+          <span class="detail-val">IT Systems Management &amp; Security Student</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Institution</span>
+          <span class="detail-val">NSCC</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Year</span>
+          <span class="detail-val">Second Year</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Location</span>
+          <span class="detail-val">Nova Scotia, Canada</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Status</span>
+          <span class="detail-val status-open">
+            <span class="status-dot"></span>
+            Open to opportunities
+          </span>
+        </div>
+      </div>
+
+      <div class="anim d5" style="display: flex; gap: 0.75rem;">
+        <a href="community.html" class="btn btn-ghost">Community Work</a>
+        <a href="certificates.html" class="btn btn-ghost">Certificates</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span>© 2025 Dalton Goodwin-Peck</span>
+  <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  function copyEmail() {
+    navigator.clipboard.writeText('dalton@thecorrodingweb.org').then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied!';
+      btn.classList.add('success');
+      setTimeout(() => {
+        btn.textContent = 'Copy Address';
+        btn.classList.remove('success');
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

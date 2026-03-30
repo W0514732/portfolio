@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalton Goodwin-Peck — IT Systems & Security</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      padding: 6rem 0 5rem;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: end;
+    }
+
+    .hero-left .display { margin-bottom: 2rem; }
+
+    .hero-left .lead { margin-bottom: 2.5rem; max-width: 420px; }
+
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .hero-right {
+      padding-bottom: 0.5rem;
+    }
+
+    .hero-stat-list {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--light);
+      transition: background 0.2s;
+    }
+    .hero-stat:last-child { border-bottom: none; }
+    .hero-stat:hover { background: var(--off-white); }
+
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--ink);
+      min-width: 4rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.825rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ── ABOUT BODY ── */
+    .about-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-sidebar .eyebrow { margin-bottom: 0.75rem; }
+
+    .about-sidebar h2 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .about-sidebar h2 em { font-style: italic; color: var(--ink2); }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .about-body p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink2);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ── WHY NSCC ── */
+    .why-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .why-sidebar h2 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .why-sidebar h2 em { font-style: italic; color: var(--ink2); }
+
+    .why-body p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink2);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .why-body p:last-child { margin-bottom: 0; }
+
+    /* ── EMPLOYER VALUE ── */
+    .value-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+
+    .value-item {
+      padding: 1.75rem;
+      background: var(--white);
+      border-right: 1px solid var(--light);
+      transition: background 0.2s;
+    }
+    .value-item:last-child { border-right: none; }
+    .value-item:hover { background: var(--off-white); }
+
+    .value-icon {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .value-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .value-desc {
+      font-size: 0.825rem;
+      font-weight: 300;
+      color: var(--ink2);
+      line-height: 1.65;
+    }
+
+    /* ── CONCLUSION ── */
+    .conclusion-section {
+      padding: 5rem 0;
+      background: var(--ink);
+    }
+
+    .conclusion-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .conclusion-inner h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--white);
+    }
+    .conclusion-inner h2 em { font-style: italic; color: var(--mid); }
+
+    .conclusion-right p {
+      font-size: 0.975rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .conclusion-right p:last-child { margin-bottom: 0; }
+
+    .conclusion-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--white);
+    }
+    .btn-light:hover {
+      background: var(--off-white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--mid);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-outline-light:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: var(--white);
+    }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .skills-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    .skills-table {
+      border: 1px solid var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--light);
+      gap: 1.5rem;
+      transition: background 0.2s;
+    }
+    .skill-row:last-child { border-bottom: none; }
+    .skill-row:hover { background: var(--off-white); }
+
+    .skill-name {
+      font-size: 0.9rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .skill-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--light);
+    }
+    .dot.filled { background: var(--ink); }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .skills-header { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero { padding: 4rem 0 3.5rem; }
+      .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .conclusion-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .value-grid { grid-template-columns: 1fr 1fr; }
+      .value-item { border-right: none; border-bottom: 1px solid var(--light); }
+      .value-item:last-child { border-bottom: none; }
+    }
+
+    @media (max-width: 560px) {
+      .value-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dalton Goodwin-Peck</a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">About</a></li>
+    <li><a href="school.html">School</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="eyebrow anim d1">NSCC · IT Systems Management &amp; Security</p>
+          <h1 class="display anim d2">
+            Systems &amp; Security,<br>
+            <em>built on 11 years</em><br>
+            of curiosity.
+          </h1>
+          <p class="lead anim d3">
+            Second-year student, peer tutor, and community contributor — bridging the gap between complex technology and the people who use it.
+          </p>
+          <div class="hero-actions anim d4">
+            <a href="community.html" class="btn btn-dark">See My Work</a>
+            <a href="contact.html" class="btn btn-ghost">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-right anim d4">
+          <div class="hero-stat-list">
+            <div class="hero-stat">
+              <span class="stat-num">11+</span>
+              <span class="stat-label">Years exploring digital environments</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Years at NSCC IT Systems Management</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">LinkedIn Learning certifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-sidebar anim d2">
+          <p class="eyebrow">About Me</p>
+          <h2>Empowerment<br>through <em>technology</em></h2>
+          <div class="tag-list">
+            <span class="tag">OPNsense</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Peer Tutoring</span>
+            <span class="tag">Ethical Hacking</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Sysadmin</span>
+          </div>
+        </div>
+
+        <div class="about-body anim d3">
+          <p>
+            I am a second-year IT Systems Management and Security student at NSCC with a passion for bridging the gap between complex technology and the people who use it.
+          </p>
+          <p>
+            My background is built on 11 years of exploring digital environments, which has evolved into a career focused on systems administration and proactive security.
+          </p>
+          <p>
+            Beyond the technical — like managing OPNsense firewalls or Windows Server environments — I find the most meaning in helping others. Whether I'm mentoring first-year students as a Peer Tutor or developing accessible guides to simplify learning systems, my goal is to ensure that technology is a tool for empowerment, not a barrier.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section">
+    <div class="container">
+      <div class="skills-header">
+        <div>
+          <p class="eyebrow">Skills</p>
+          <h2 class="display" style="font-size: 2rem;">What I<br><em>work with</em></h2>
+        </div>
+        <p class="lead" style="font-size: 0.95rem; padding-top: 2.5rem;">
+          Hands-on experience from two years of lab work, personal projects, and peer tutoring across these areas.
+        </p>
+      </div>
+
+      <div class="skills-table">
+        <div class="skill-row"><span class="skill-name">Systems Administration</span></div>
+        <div class="skill-row"><span class="skill-name">Windows Server &amp; Active Directory</span></div>
+        <div class="skill-row"><span class="skill-name">OPNsense / Firewall Management</span></div>
+        <div class="skill-row"><span class="skill-name">Network Security</span></div>
+        <div class="skill-row"><span class="skill-name">Ethical Hacking (Python)</span></div>
+        <div class="skill-row"><span class="skill-name">Technical Writing &amp; Documentation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NSCC -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-sidebar">
+          <p class="eyebrow anim d1">Why NSCC</p>
+          <h2>Starting with<br><em>curiosity</em></h2>
+        </div>
+        <div class="why-body anim d2">
+          <p>
+            I chose NSCC practically — it was local, accessible, and affordable. But I didn't come in with a clear plan. I had been around technology for years, always pulling things apart to see how they worked, and I knew I wanted more of that. NSCC's hands-on, practical approach turned out to be exactly the right fit for how I learn.
+          </p>
+          <p>
+            What I didn't expect was how much I'd grow beyond the curriculum. The program gave me a foundation, but curiosity pushed me further. I started exploring ethical hacking on TryHackMe and Hack The Box, completed LinkedIn Learning courses on my own time, ran virtual machine labs at home, and stayed involved in the school community at every opportunity.
+          </p>
+          <p>
+            I came in not knowing exactly what I wanted to do. I'm leaving with a clear sense of what I'm capable of — and a genuine excitement for wherever that takes me in IT.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPLOYER VALUE -->
+  <section class="value-section">
+    <div class="container">
+      <p class="eyebrow anim d1">What I Bring</p>
+      <h2 class="display anim d2" style="font-size: 2rem; max-width: 480px;">Why this matters<br>to an <em>employer</em></h2>
+      <div class="value-grid anim d3">
+        <div class="value-item">
+          <div class="value-icon">⚙️</div>
+          <div class="value-title">Self-Driven Learning</div>
+          <div class="value-desc">IT moves fast. I don't wait to be taught — I use TryHackMe, Hack The Box, LinkedIn Learning, and home lab VMs to stay sharp on my own time. That habit doesn't stop at graduation.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <div class="value-title">Technical AND People Skills</div>
+          <div class="value-desc">As a Peer Tutor and Class Rep I learned that the best IT professionals can explain things clearly, listen well, and earn trust. I bring both sides to the table.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🛡️</div>
+          <div class="value-title">Security-First Mindset</div>
+          <div class="value-desc">From Active Directory hardening to OPNsense firewall rules to ethical hacking, I approach every system thinking about what could go wrong — and how to stop it.</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">📋</div>
+          <div class="value-title">Accountable & Involved</div>
+          <div class="value-desc">Two years of showing up — as Class Rep, Peer Tutor, and Esports Ops — demonstrates I contribute beyond the minimum. I'm the person who raises their hand.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="conclusion-section">
+    <div class="container">
+      <div class="conclusion-inner">
+        <h2 class="anim d1">A foundation<br>built on more than<br><em>just school</em></h2>
+        <div class="conclusion-right anim d2">
+          <p>
+            Two years at NSCC gave me enterprise-grade technical skills across identity management, network security, cloud administration, Linux, and virtualization. But the portfolio you're looking at represents more than coursework.
+          </p>
+          <p>
+            It represents someone who stayed curious, got involved, pushed beyond what was required, and genuinely cares about technology as a craft — and about the people it serves. I'm open to where my career takes me, and I'm ready to keep learning from day one.
+          </p>
+          <div class="conclusion-actions">
+            <a href="community.html" class="btn btn-light">See Community Work</a>
+            <a href="contact.html" class="btn btn-outline-light">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2025 Dalton Goodwin-Peck</span>
+  <a href="contact.html">dalton@thecorrodingweb.org</a>
+</footer>
+
+<script data-cfasync="false" src="/
