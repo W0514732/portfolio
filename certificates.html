@@ -3,344 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificates — Dalton Goodwin-Peck</title>
+  <title>Dalton | Certificates</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .page-header {
-      padding: 5rem 0 4rem;
-      border-bottom: 1px solid var(--light);
-    }
-
-    .certs-section {
-      padding: 4.5rem 0;
-    }
-
-    /* ── CAROUSEL ── */
-    .carousel-wrap {
-      border: 1px solid var(--light);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-    }
-
-    .carousel-viewport {
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    .slide {
-      min-width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .slide-preview {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--off-white);
-      position: relative;
-    }
-
-    .slide-preview iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .slide-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 1.75rem;
-      border-top: 1px solid var(--light);
-      gap: 1rem;
-    }
-
-    .slide-meta .cert-count {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .slide-meta h3 {
-      font-family: var(--font-serif);
-      font-size: 1.0625rem;
-      font-weight: 400;
-      color: var(--ink);
-    }
-
-    .slide-meta .provider {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-top: 0.2rem;
-    }
-
-    .slide-open {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.1rem;
-      border: 1px solid var(--light);
-      border-radius: var(--radius);
-      font-size: 0.775rem;
-      font-weight: 500;
-      color: var(--ink2);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s;
-      flex-shrink: 0;
-    }
-    .slide-open:hover {
-      border-color: var(--mid);
-      color: var(--ink);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* CAROUSEL CONTROLS */
-    .carousel-controls {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .c-btn {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--light);
-      background: var(--white);
-      color: var(--ink2);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.875rem;
-      transition: all 0.2s;
-    }
-    .c-btn:hover { border-color: var(--mid); color: var(--ink); box-shadow: var(--shadow-sm); }
-    .c-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
-
-    .c-dots { display: flex; gap: 6px; }
-    .c-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--light);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .c-dot.active { background: var(--ink); transform: scale(1.25); }
-
-    /* ── CERT INDEX ── */
-    .cert-index {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1px;
-      border: 1px solid var(--light);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .cert-index-item {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--white);
-      cursor: pointer;
-      transition: background 0.2s;
-      border-right: 1px solid var(--light);
-      border-bottom: 1px solid var(--light);
-    }
-    .cert-index-item:last-child,
-    .cert-index-item:nth-child(3n) { border-right: none; }
-    .cert-index-item:hover { background: var(--off-white); }
-    .cert-index-item.active { background: var(--ink); }
-    .cert-index-item.active .cert-idx-name { color: var(--white); }
-    .cert-index-item.active .cert-idx-num { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
-    .cert-index-item.active .cert-idx-sub { color: rgba(255,255,255,0.5); }
-
-    .cert-idx-num {
-      width: 32px; height: 32px;
-      border-radius: var(--radius);
-      background: var(--off-white);
-      border: 1px solid var(--light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--muted);
-      flex-shrink: 0;
-    }
-
-    .cert-idx-name {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-    .cert-idx-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-weight: 300;
-    }
-
-    @media (max-width: 640px) {
-      .slide-footer { flex-direction: column; align-items: flex-start; }
-      .page-header { padding: 3.5rem 0 2.5rem; }
-    }
-  </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Dalton Goodwin-Peck</a>
-  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">About</a></li>
-    <li><a href="school.html">School</a></li>
-    <li><a href="community.html">Community</a></li>
-    <li><a href="certificates.html" class="active">Certificates</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<main>
-
-  <section class="page-header">
-    <div class="container">
-      <p class="eyebrow anim d1">Certifications</p>
-      <h1 class="display anim d2">Proof of<br><em>the work</em></h1>
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Dalton</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="school.html">Domains</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="certificates.html" class="active">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="certs-section">
+  <main style="padding: 4rem 0;">
     <div class="container">
+      <p class="eyebrow">Professional Development</p>
+      <h1 class="display-title">Certifications &amp; <span class="gradient-text">Training</span></h1>
 
-      <div class="carousel-wrap anim d3">
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="track">
+      <div class="card-grid" style="margin-top: 3rem;">
+        <div class="card">
+          <p class="eyebrow">LinkedIn Learning · Mar 2026</p>
+          <h3 style="font-size: 1.15rem;">Microsoft Security Essentials</h3>
+          <p style="margin-bottom: 1.25rem;">Concepts, Solutions &amp; AI-Powered Protection</p>
+          <a href="Certificates/CertificateOfCompletion_Microsoft Security Essentials Concepts Solutions and AIPowered Protection.pdf" target="_blank" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Certificate ↗</a>
+        </div>
 
-            <div class="slide">
-              <div class="slide-preview">
-                <iframe src="Certificates/CertificateOfCompletion_Developing Ethical Hacking Tools with Python.pdf" title="Ethical Hacking Tools with Python"></iframe>
-              </div>
-              <div class="slide-footer">
-                <div class="slide-meta">
-                  <div class="cert-count">01 / 03</div>
-                  <h3>Developing Ethical Hacking Tools with Python</h3>
-                  <div class="provider">LinkedIn Learning</div>
-                </div>
-                <a href="Certificates/CertificateOfCompletion_Developing Ethical Hacking Tools with Python.pdf" target="_blank" class="slide-open">Open ↗</a>
-              </div>
-            </div>
+        <div class="card">
+          <p class="eyebrow">LinkedIn Learning · Dec 2024</p>
+          <h3 style="font-size: 1.15rem;">Ethical Hacking Tools with Python</h3>
+          <p style="margin-bottom: 1.25rem;">Developing custom security and audit scripts.</p>
+          <a href="Certificates/CertificateOfCompletion_Developing Ethical Hacking Tools with Python.pdf" target="_blank" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Certificate ↗</a>
+        </div>
 
-            <div class="slide">
-              <div class="slide-preview">
-                <iframe src="Certificates/CertificateOfCompletion_Efficient Time Management.pdf" title="Efficient Time Management"></iframe>
-              </div>
-              <div class="slide-footer">
-                <div class="slide-meta">
-                  <div class="cert-count">02 / 03</div>
-                  <h3>Efficient Time Management</h3>
-                  <div class="provider">LinkedIn Learning</div>
-                </div>
-                <a href="Certificates/CertificateOfCompletion_Efficient Time Management.pdf" target="_blank" class="slide-open">Open ↗</a>
-              </div>
-            </div>
-
-            <div class="slide">
-              <div class="slide-preview">
-                <iframe src="Certificates/CertificateOfCompletion_Microsoft Security Essentials Concepts Solutions and AIPowered Protection.pdf" title="Microsoft Security Essentials"></iframe>
-              </div>
-              <div class="slide-footer">
-                <div class="slide-meta">
-                  <div class="cert-count">03 / 03</div>
-                  <h3>Microsoft Security Essentials: Concepts, Solutions &amp; AI-Powered Protection</h3>
-                  <div class="provider">LinkedIn Learning</div>
-                </div>
-                <a href="Certificates/CertificateOfCompletion_Microsoft Security Essentials Concepts Solutions and AIPowered Protection.pdf" target="_blank" class="slide-open">Open ↗</a>
-              </div>
-            </div>
-
-          </div>
+        <div class="card">
+          <p class="eyebrow">LinkedIn Learning · Jan 2025</p>
+          <h3 style="font-size: 1.15rem;">Efficient Time Management</h3>
+          <p style="margin-bottom: 1.25rem;">PMI Authorized course on execution and workflow.</p>
+          <a href="Certificates/CertificateOfCompletion_Efficient Time Management.pdf" target="_blank" class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Certificate ↗</a>
         </div>
       </div>
-
-      <!-- CAROUSEL NAV -->
-      <div class="carousel-controls anim d4" style="margin-bottom: 3rem;">
-        <button class="c-btn" id="prevBtn" onclick="prev()" disabled>←</button>
-        <div class="c-dots" id="dots">
-          <div class="c-dot active" onclick="go(0)"></div>
-          <div class="c-dot" onclick="go(1)"></div>
-          <div class="c-dot" onclick="go(2)"></div>
-        </div>
-        <button class="c-btn" id="nextBtn" onclick="next()">→</button>
-      </div>
-
-      <!-- INDEX -->
-      <p class="eyebrow anim d4" style="margin-bottom: 1rem;">All Certificates</p>
-      <div class="cert-index anim d5">
-        <div class="cert-index-item active" id="idx-0" onclick="go(0)">
-          <div class="cert-idx-num">01</div>
-          <div>
-            <div class="cert-idx-name">Developing Ethical Hacking Tools with Python</div>
-            <div class="cert-idx-sub">LinkedIn Learning</div>
-          </div>
-        </div>
-        <div class="cert-index-item" id="idx-1" onclick="go(1)">
-          <div class="cert-idx-num">02</div>
-          <div>
-            <div class="cert-idx-name">Efficient Time Management</div>
-            <div class="cert-idx-sub">LinkedIn Learning</div>
-          </div>
-        </div>
-        <div class="cert-index-item" id="idx-2" onclick="go(2)">
-          <div class="cert-idx-num">03</div>
-          <div>
-            <div class="cert-idx-name">Microsoft Security Essentials: AI-Powered Protection</div>
-            <div class="cert-idx-sub">LinkedIn Learning</div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </main>
 
-</main>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Dalton</span>
+      <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
+    </div>
+  </footer>
 
-<footer>
-  <span>© 2025 Dalton Goodwin-Peck</span>
-  <a href="contact.html">dalton@thecorrodingweb.org</a>
-</footer>
-
-<script>
-  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
-
-  let cur = 0;
-  const total = 3;
-
-  function go(i) {
-    cur = i;
-    document.getElementById('track').style.transform = `translateX(-${cur * 100}%)`;
-    document.querySelectorAll('.c-dot').forEach((d, j) => d.classList.toggle('active', j === cur));
-    document.querySelectorAll('.cert-index-item').forEach((el, j) => el.classList.toggle('active', j === cur));
-    document.getElementById('prevBtn').disabled = cur === 0;
-    document.getElementById('nextBtn').disabled = cur === total - 1;
-  }
-
-  function prev() { if (cur > 0) go(cur - 1); }
-  function next() { if (cur < total - 1) go(cur + 1); }
-</script>
 </body>
 </html>

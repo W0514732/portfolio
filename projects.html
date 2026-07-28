@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalton | Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Dalton</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="school.html">Domains</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 4rem 0;">
+    <div class="container">
+      <p class="eyebrow">Case Studies</p>
+      <h1 class="display-title">Featured Projects &amp; <span class="gradient-text">Work</span></h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 3.5rem;">
+        From independent threat analysis to simulated penetration testing and enterprise server builds.
+      </p>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <p class="eyebrow">Digital Safety &amp; Trust</p>
+        <h2 style="font-size: 1.6rem;">The Corroding Web</h2>
+        <p>
+          An independent platform monitoring shifting digital threat patterns and serving as a compliant, non-vigilante intake bridge to industry safety teams, registrars, and reporting bodies like NCMEC.
+        </p>
+        <ul>
+          <li>Follows strict triage guidelines to pass verified intelligence directly to authorized channels.</li>
+          <li>Translates multi-page technical risk assessments into practical safety guides for everyday users.</li>
+          <li>Partners with companies to host safety resources and elevate online protection standards.</li>
+        </ul>
+        <div>
+          <span class="tag">Threat Intelligence</span>
+          <span class="tag">NCMEC Intake</span>
+          <span class="tag">Responsible Disclosure</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <p class="eyebrow">Cybersecurity Audit</p>
+        <h2 style="font-size: 1.6rem;">Breach Simulation: "The Neglected Closet"</h2>
+        <p>
+          Conducted a full-scope security audit simulating a legacy branch office network segment (172.27.71.0/24) containing unpatched, End-of-Life assets.
+        </p>
+        <ul>
+          <li><strong>Discovery:</strong> Identified unencrypted Telnet (Port 23) using Wireshark and Nmap scripts.</li>
+          <li><strong>Exploitation:</strong> Executed an automated dictionary attack, recovering admin credentials in under 5 minutes.</li>
+          <li><strong>Remediation:</strong> Disabled legacy Telnet, rotated passwords to complex passphrases, and verified port closure via follow-up scans.</li>
+        </ul>
+        <div>
+          <span class="tag">Penetration Testing</span>
+          <span class="tag">Nmap &amp; Wireshark</span>
+          <span class="tag">System Hardening</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="eyebrow">Enterprise Network Build</p>
+        <h2 style="font-size: 1.6rem;">DEPO.local Enterprise Network Infrastructure</h2>
+        <p>
+          Engineered a multi-VLAN enterprise infrastructure hosted on Proxmox VE with dual-homed routing on a Dell PowerEdge R320 and HP 1920 Layer 3 switch.
+        </p>
+        <ul>
+          <li>Configured a Windows Server 2025 Domain Controller with automated PowerShell scripts for OU and user onboarding.</li>
+          <li>Built an SCCM deployment server with PXE boot boundaries and silent software installation packages.</li>
+          <li>Enforced domain-wide Group Policies for user interface branding and mapped drive security.</li>
+        </ul>
+        <div>
+          <span class="tag">Proxmox VE</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">SCCM</span>
+          <span class="tag">PowerShell</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Dalton</span>
+      <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
+    </div>
+  </footer>
+
+</body>
+</html>
