@@ -1,98 +1,85 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalton | The Corroding Web</title>
-    <meta name="description" content="Founder of The Corroding Web — documenting online threats to protect children in the digital age.">
-    <meta property="og:title" content="Dalton | The Corroding Web">
-    <meta property="og:description" content="Founder of The Corroding Web — documenting online threats to protect children in the digital age.">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#050505">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalton | IT Systems &amp; Digital Safety</title>
+  <link rel="stylesheet" href="old-style.css" />
 </head>
 <body>
 
-    <main class="profile">
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Dalton</a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="school.html">Domains</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <div class="avatar">D</div>
+  <main style="padding: 4rem 0;">
+    <section class="container">
+      <p class="eyebrow">IT Systems Management &amp; Security</p>
+      <h1 class="display-title">Keeping systems reliable and <span class="gradient-text">people safe online.</span></h1>
+      <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 620px; margin-bottom: 2.5rem;">
+        Hi, I'm Dalton ðŸ‘‹. I'm an IT professional focused on building dependable infrastructure, researching digital safety threats, and making technology approachable.
+      </p>
 
-        <h1>Dalton</h1>
-        <p class="role">Founder &amp; Researcher</p>
+      <div style="display: flex; gap: 1rem; margin-bottom: 4rem; flex-wrap: wrap;">
+        <a href="projects.html" class="btn-gradient">Explore My Work â†—</a>
+        <a href="contact.html" class="btn-outline">Say Hello</a>
+      </div>
 
-        <p class="bio">
-            Building <a href="https://thecorrodingweb.org" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,112,243,0.4);">The Corroding Web</a> to document online threats against children and provide practical safety guidance for parents, guardians, and teens.
-        </p>
+      <div class="card-grid" style="margin-bottom: 4rem;">
+        <div class="card">
+          <p class="eyebrow">Digital Safety</p>
+          <h3 style="font-size: 1.25rem;">The Corroding Web</h3>
+          <p>Monitoring shifting threat patterns and serving as a compliant intake bridge to safety teams and NCMEC.</p>
+        </div>
 
-        <nav class="links">
-            <a href="mailto:dalton@thecorrodingweb.org" class="link-card email-card">
-                <span class="link-icon">&#9993;</span>
-                <span class="link-text">
-                    <span class="link-label">dalton@thecorrodingweb.org</span>
-                    <span class="link-url">Email</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
+        <div class="card">
+          <p class="eyebrow">Hands-On Defense</p>
+          <h3 style="font-size: 1.25rem;">Simulated Audits</h3>
+          <p>Performing Red vs. Blue security audits, vulnerability assessments, and system hardening.</p>
+        </div>
 
-            <hr class="divider">
+        <div class="card">
+          <p class="eyebrow">Infrastructure</p>
+          <h3 style="font-size: 1.25rem;">Enterprise Lab</h3>
+          <p>Deploying Proxmox hypervisors, Active Directory, SCCM image pipelines, and OPNsense firewalls.</p>
+        </div>
+      </div>
 
-            <a href="https://thecorrodingweb.org" target="_blank" rel="noopener noreferrer" class="link-card">
-                <span class="link-icon">&#9670;</span>
-                <span class="link-text">
-                    <span class="link-label">The Corroding Web</span>
-                    <span class="link-url">thecorrodingweb.org</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
+      <div>
+        <p class="eyebrow">Toolkit &amp; Expertise</p>
+        <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">What I Bring To The Table</h2>
+        <div>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Threat Intelligence</span>
+          <span class="tag">SCCM &amp; PXE</span>
+          <span class="tag">OPNsense Firewalls</span>
+          <span class="tag">PowerShell Automation</span>
+          <span class="tag">Proxmox VE</span>
+          <span class="tag">Linux Administration</span>
+          <span class="tag">Technical Mentorship</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <a href="https://learning.thecorrodingweb.org" target="_blank" rel="noopener noreferrer" class="link-card">
-                <span class="link-icon">&#9733;</span>
-                <span class="link-text">
-                    <span class="link-label">Learning Hub</span>
-                    <span class="link-url">learning.thecorrodingweb.org</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
-
-            <a href="https://projectmorris.org" target="_blank" rel="noopener noreferrer" class="link-card">
-                <span class="link-icon">&#9679;</span>
-                <span class="link-text">
-                    <span class="link-label">Project Morris</span>
-                    <span class="link-url">projectmorris.org</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
-
-            <hr class="divider">
-
-            <a href="https://x.com/TheCorrodingWeb" target="_blank" rel="noopener noreferrer" class="link-card">
-                <span class="link-icon">X</span>
-                <span class="link-text">
-                    <span class="link-label">X (Twitter)</span>
-                    <span class="link-url">@TheCorrodingWeb</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
-
-            <a href="https://youtube.com/@TheCorrodingWeb" target="_blank" rel="noopener noreferrer" class="link-card">
-                <span class="link-icon">&#9654;</span>
-                <span class="link-text">
-                    <span class="link-label">YouTube</span>
-                    <span class="link-url">@TheCorrodingWeb</span>
-                </span>
-                <span class="link-arrow">&#8599;</span>
-            </a>
-        </nav>
-
-        <p class="footer-note">
-            &copy; 2026 <a href="https://thecorrodingweb.org" target="_blank" rel="noopener noreferrer">THE CORRODING WEB</a>
-        </p>
-
-    </main>
+  <footer>
+    <div class="container footer-inner">
+      <span>Â© 2026 Dalton</span>
+      <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
+    </div>
+  </footer>
 
 </body>
 </html>
