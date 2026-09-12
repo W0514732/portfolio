@@ -1,88 +1,66 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dalton | Technical Domains</title>
-  <link rel="stylesheet" href="old-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalton | Technical Domains</title>
+    <meta name="description" content="Core IT domains: identity management, networking, cloud, and infrastructure.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="emergency-alert"><strong>EMERGENCY NOTICE:</strong> IF A CHILD IS IN IMMEDIATE DANGER, PLEASE CONTACT 911 IMMEDIATELY.</div>
+    <nav class="nav"><div class="nav-inner"><span class="brand">DALTON<span class="brand-sub">PORTFOLIO</span></span><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button><ul class="nav-links"><li><a href="index.html">ABOUT</a></li><li><a href="projects.html">PROJECTS</a></li><li><a href="school.html" class="active">DOMAINS</a></li><li><a href="community.html">COMMUNITY</a></li><li><a href="certificates.html">CERTIFICATES</a></li><li><a href="contact.html">CONTACT</a></li></ul></div></nav>
+    <div class="mobile-menu" id="mobile-menu"><a href="index.html">ABOUT</a><a href="projects.html">PROJECTS</a><a href="school.html" class="active">DOMAINS</a><a href="community.html">COMMUNITY</a><a href="certificates.html">CERTIFICATES</a><a href="contact.html">CONTACT</a></div>
 
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Dalton</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="school.html" class="active">Domains</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="certificates.html">Certificates</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main style="padding: 4rem 0;">
-    <div class="container">
-      <p class="eyebrow">Technical Capabilities</p>
-      <h1 class="display-title">Core IT <span class="gradient-text">Domains</span></h1>
-
-      <div class="grid-2" style="margin-top: 3rem;">
-        <div class="card">
-          <p class="eyebrow">Identity &amp; Governance</p>
-          <h3 style="font-size: 1.3rem;">Active Directory &amp; Policy</h3>
-          <p>Building domain controllers, managing user lifecycles, and scripting Group Policies to lock down endpoints.</p>
-          <div style="margin-top: 1rem;">
-            <span class="tag">AD DS</span>
-            <span class="tag">GPO</span>
-            <span class="tag">Least Privilege</span>
-          </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Core IT Domains</h1>
+            <p class="sub">Technical capabilities across identity, networking, cloud, and infrastructure.</p>
         </div>
+    </header>
 
-        <div class="card">
-          <p class="eyebrow">Network Perimeter</p>
-          <h3 style="font-size: 1.3rem;">Firewalls &amp; Routing</h3>
-          <p>OPNsense stateful inspection, NAT rules, encrypted WireGuard VPN tunnels, and VLAN segmentation.</p>
-          <div style="margin-top: 1rem;">
-            <span class="tag">OPNsense</span>
-            <span class="tag">VLANs</span>
-            <span class="tag">WireGuard</span>
-          </div>
+    <section class="container">
+        <div class="grid">
+            <div class="card">
+                <span class="card-label">IDENTITY &amp; GOVERNANCE</span>
+                <h3>Active Directory &amp; Policy</h3>
+                <p>Building domain controllers, managing user lifecycles, and scripting Group Policies to enforce least-privilege access across endpoints.</p>
+                <div class="tags"><span class="tag">AD DS</span><span class="tag">GPO</span><span class="tag">LEAST PRIVILEGE</span></div>
+            </div>
+            <div class="card">
+                <span class="card-label">NETWORK PERIMETER</span>
+                <h3>Firewalls &amp; Routing</h3>
+                <p>OPNsense stateful inspection, NAT rules, encrypted WireGuard VPN tunnels, and VLAN segmentation for layered network defense.</p>
+                <div class="tags"><span class="tag">OPNSENSE</span><span class="tag">VLANS</span><span class="tag">WIREGUARD</span></div>
+            </div>
+            <div class="card">
+                <span class="card-label">CLOUD &amp; ENDPOINTS</span>
+                <h3>Microsoft 365 &amp; Intune</h3>
+                <p>Managing M365 tenant identities, Intune device configuration profiles, and Conditional Access policies for secure remote work.</p>
+                <div class="tags"><span class="tag">M365</span><span class="tag">INTUNE MDM</span><span class="tag">MFA</span></div>
+            </div>
+            <div class="card">
+                <span class="card-label">INFRASTRUCTURE</span>
+                <h3>Linux &amp; Virtualization</h3>
+                <p>Command-line system administration, SSH hardening, sudoer privilege management, and Proxmox/VMware hypervisor operations.</p>
+                <div class="tags"><span class="tag">LINUX CLI</span><span class="tag">PROXMOX</span><span class="tag">HARDENING</span></div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-          <p class="eyebrow">Cloud &amp; Endpoints</p>
-          <h3 style="font-size: 1.3rem;">Microsoft 365 &amp; Intune</h3>
-          <p>Managing M365 tenant identities, Intune device configuration profiles, and Conditional Access policies.</p>
-          <div style="margin-top: 1rem;">
-            <span class="tag">M365</span>
-            <span class="tag">Intune MDM</span>
-            <span class="tag">MFA</span>
-          </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://thecorrodingweb.org" target="_blank" rel="noopener noreferrer">THE CORRODING WEB</a>
+            <a href="https://learning.thecorrodingweb.org" target="_blank" rel="noopener noreferrer">LEARNING HUB</a>
+            <a href="https://x.com/TheCorrodingWeb" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://youtube.com/@TheCorrodingWeb" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
         </div>
-
-        <div class="card">
-          <p class="eyebrow">Infrastructure</p>
-          <h3 style="font-size: 1.3rem;">Linux &amp; Virtualization</h3>
-          <p>Command line system administration, SSH security, sudoer privileges, and Proxmox/VMware management.</p>
-          <div style="margin-top: 1rem;">
-            <span class="tag">Linux CLI</span>
-            <span class="tag">Proxmox</span>
-            <span class="tag">Hardening</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>Â© 2026 Dalton</span>
-      <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
-    </div>
-  </footer>
-
+        <p>&copy; 2026 DALTON</p>
+    </footer>
+    <script>(function(){var b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");b.addEventListener("click",function(e){e.stopPropagation();var o=m.classList.toggle("open");b.classList.toggle("open",o)});document.addEventListener("click",function(e){if(!m.contains(e.target)&&e.target!==b&&!b.contains(e.target)){m.classList.remove("open");b.classList.remove("open")}});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");b.classList.remove("open")})})})();</script>
 </body>
 </html>

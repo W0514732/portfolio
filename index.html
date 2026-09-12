@@ -1,85 +1,82 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dalton | IT Systems &amp; Digital Safety</title>
-  <link rel="stylesheet" href="old-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalton | IT Systems &amp; Digital Safety</title>
+    <meta name="description" content="IT professional focused on infrastructure, digital safety research, and child protection.">
+    <meta name="theme-color" content="#050505">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="emergency-alert"><strong>EMERGENCY NOTICE:</strong> IF A CHILD IS IN IMMEDIATE DANGER, PLEASE CONTACT 911 IMMEDIATELY.</div>
+    <nav class="nav"><div class="nav-inner"><span class="brand">DALTON<span class="brand-sub">PORTFOLIO</span></span><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button><ul class="nav-links"><li><a href="index.html" class="active">ABOUT</a></li><li><a href="projects.html">PROJECTS</a></li><li><a href="school.html">DOMAINS</a></li><li><a href="community.html">COMMUNITY</a></li><li><a href="certificates.html">CERTIFICATES</a></li><li><a href="contact.html">CONTACT</a></li></ul></div></nav>
+    <div class="mobile-menu" id="mobile-menu"><a href="index.html" class="active">ABOUT</a><a href="projects.html">PROJECTS</a><a href="school.html">DOMAINS</a><a href="community.html">COMMUNITY</a><a href="certificates.html">CERTIFICATES</a><a href="contact.html">CONTACT</a></div>
 
-  <header>
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Dalton</a>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="school.html">Domains</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="certificates.html">Certificates</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Keeping systems reliable<br>and people safe online.</h1>
+            <p class="sub">IT professional focused on building dependable infrastructure, researching digital safety threats, and making technology approachable.</p>
+            <div class="hero-btns">
+                <a href="projects.html" class="btn-primary">EXPLORE MY WORK</a>
+                <a href="contact.html" class="btn-outline">SAY HELLO</a>
+            </div>
+        </div>
+    </header>
 
-  <main style="padding: 4rem 0;">
     <section class="container">
-      <p class="eyebrow">IT Systems Management &amp; Security</p>
-      <h1 class="display-title">Keeping systems reliable and <span class="gradient-text">people safe online.</span></h1>
-      <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 620px; margin-bottom: 2.5rem;">
-        Hi, I'm Dalton ðŸ‘‹. I'm an IT professional focused on building dependable infrastructure, researching digital safety threats, and making technology approachable.
-      </p>
-
-      <div style="display: flex; gap: 1rem; margin-bottom: 4rem; flex-wrap: wrap;">
-        <a href="projects.html" class="btn-gradient">Explore My Work â†—</a>
-        <a href="contact.html" class="btn-outline">Say Hello</a>
-      </div>
-
-      <div class="card-grid" style="margin-bottom: 4rem;">
-        <div class="card">
-          <p class="eyebrow">Digital Safety</p>
-          <h3 style="font-size: 1.25rem;">The Corroding Web</h3>
-          <p>Monitoring shifting threat patterns and serving as a compliant intake bridge to safety teams and NCMEC.</p>
+        <p class="section-label">WHAT I DO</p>
+        <div class="grid">
+            <div class="card">
+                <span class="card-label">DIGITAL SAFETY</span>
+                <h3>The Corroding Web</h3>
+                <p>Independent platform documenting online threats against children and providing practical safety guidance for parents and guardians. Reporting channels, threat analysis, and educational resources.</p>
+                <div class="tags"><span class="tag">THREAT INTELLIGENCE</span><span class="tag">NCMEC INTAKE</span><span class="tag">OSINT</span></div>
+            </div>
+            <div class="card">
+                <span class="card-label">HANDS-ON DEFENSE</span>
+                <h3>Security Audits</h3>
+                <p>Red vs. Blue team exercises, vulnerability assessments, penetration testing, and system hardening across legacy and modern environments.</p>
+                <div class="tags"><span class="tag">PENTESTING</span><span class="tag">VULN ASSESSMENT</span><span class="tag">HARDENING</span></div>
+            </div>
+            <div class="card">
+                <span class="card-label">INFRASTRUCTURE</span>
+                <h3>Enterprise Lab</h3>
+                <p>Full-stack enterprise builds on Proxmox VE with Active Directory, SCCM image pipelines, OPNsense firewalls, and multi-VLAN segmentation.</p>
+                <div class="tags"><span class="tag">PROXMOX VE</span><span class="tag">ACTIVE DIRECTORY</span><span class="tag">SCCM</span></div>
+            </div>
         </div>
 
-        <div class="card">
-          <p class="eyebrow">Hands-On Defense</p>
-          <h3 style="font-size: 1.25rem;">Simulated Audits</h3>
-          <p>Performing Red vs. Blue security audits, vulnerability assessments, and system hardening.</p>
+        <p class="section-label">TOOLKIT</p>
+        <div style="text-align:center; margin-bottom: clamp(50px, 8vw, 80px);">
+            <span class="tag">Active Directory</span>
+            <span class="tag">Threat Intelligence</span>
+            <span class="tag">SCCM &amp; PXE</span>
+            <span class="tag">OPNsense</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Proxmox VE</span>
+            <span class="tag">Linux</span>
+            <span class="tag">M365 &amp; Intune</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">WireGuard</span>
+            <span class="tag">Technical Mentorship</span>
         </div>
-
-        <div class="card">
-          <p class="eyebrow">Infrastructure</p>
-          <h3 style="font-size: 1.25rem;">Enterprise Lab</h3>
-          <p>Deploying Proxmox hypervisors, Active Directory, SCCM image pipelines, and OPNsense firewalls.</p>
-        </div>
-      </div>
-
-      <div>
-        <p class="eyebrow">Toolkit &amp; Expertise</p>
-        <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">What I Bring To The Table</h2>
-        <div>
-          <span class="tag">Active Directory</span>
-          <span class="tag">Threat Intelligence</span>
-          <span class="tag">SCCM &amp; PXE</span>
-          <span class="tag">OPNsense Firewalls</span>
-          <span class="tag">PowerShell Automation</span>
-          <span class="tag">Proxmox VE</span>
-          <span class="tag">Linux Administration</span>
-          <span class="tag">Technical Mentorship</span>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>Â© 2026 Dalton</span>
-      <a href="mailto:dalton@thecorrodingweb.org">dalton@thecorrodingweb.org</a>
-    </div>
-  </footer>
-
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://thecorrodingweb.org" target="_blank" rel="noopener noreferrer">THE CORRODING WEB</a>
+            <a href="https://learning.thecorrodingweb.org" target="_blank" rel="noopener noreferrer">LEARNING HUB</a>
+            <a href="https://x.com/TheCorrodingWeb" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://youtube.com/@TheCorrodingWeb" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+        </div>
+        <p>&copy; 2026 DALTON</p>
+    </footer>
+    <script>(function(){var b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");b.addEventListener("click",function(e){e.stopPropagation();var o=m.classList.toggle("open");b.classList.toggle("open",o)});document.addEventListener("click",function(e){if(!m.contains(e.target)&&e.target!==b&&!b.contains(e.target)){m.classList.remove("open");b.classList.remove("open")}});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");b.classList.remove("open")})})})();</script>
 </body>
 </html>
