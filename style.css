@@ -30,16 +30,20 @@ body {
 
 a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
 a:hover { opacity: 0.8; }
-
-/* ── Emergency Alert ── */
-.emergency-alert {
-    background: var(--red);
+/* ── Promo Banner ── */
+.promo-banner {
+    background: #0a5c2e;
     color: #fff;
     text-align: center;
     padding: 10px 16px;
     font-size: 0.7rem;
     font-weight: 900;
     letter-spacing: 1px;
+}
+.promo-banner a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 /* ── Nav ── */
